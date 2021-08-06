@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Negociações</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.css">
+    
+</head>
+<body class="container">
+    
+    <h1 class="text-center">Negociações</h1>
+    <div id="mensagemView"></div>
+    <form class="form" onsubmit="negociacaoController.adiciona(event)">
+        
+        <div class="form-group">
+            <label for="data">Data</label>
+            <input type="date" id="data" class="form-control" required autofocus/>        
+        </div>    
+        
+        <div class="form-group">
+            <label for="quantidade">Quantidade</label>
+            <input type="number" min="1" step="1" id="quantidade" class="form-control" value="1" required/>
+        </div>
+        
+        <div class="form-group">
+            <label for="valor">Valor</label>
+            <input id="valor" type="number" class="form-control"  min="0.01" step="0.01" value="0.0" required />
+        </div>
+        
+        <button class="btn btn-primary" type="submit">Incluir</button>
+    </form>
+    
+    <div class="text-center">
+        <button class="btn btn-primary text-center" type="button">
+            Importar Negociações
+        </button>
+        <button class="btn btn-primary text-center" type="button">
+            Apagar
+        </button>
+    </div> 
+    <br>
+    <br>
+    <div id="negociacoesView"></div>
+
+    <script src="js/app/models/Negociacao.js"></script>
+    <script src="js/app/controllers/NegociacaoController.js"></script>
+    <script src="js/app/helpers/DateHelper.js"></script>
+    <script src="js/app/models/ListaNegociacoes.js"></script>
+    <script src="js/app/views/View.js"></script>
+    <script src="js/app/views/NegociacoesView.js"></script>
+    <script src="js/app/models/Mensagem.js"></script>
+    <script src="js/app/views/MensagemView.js"></script>
+    
+
+
+    <script>
+            //Parte 1 da aula ate 7
+        //var n1 = new Negociacao(new Date(), 5, 700); // Construtor da classe negociacao
+        // n1.quantidade = 1000; //nao vai funcionar "debaixo dos panos virou um metodo"
+        // n1._quantidade = 100. //vai funcionar mas por convesao sabemos que nao deve-se mecher nesta propriedade
+        // console.log(n1.data); //parece estar acessando uma propriedade normal mas por debaixo dos panos e um metodo (get)
+        // console.log(n1.quantidade);
+        // console.log(n1.valor);
+        // console.log(n1.volume);
+            //Parte da aula 8
+        // var n1 = new Negociacao(new Date(),5,700);
+        
+        // console.log(n1.data);
+
+        // n1.data.setDate(11);
+        
+        // console.log(n1.data);
+            //Parte da aula 9
+        // for(let i = 1; i <=100; i++){
+        //     var nome = "Douglas";
+        //     console.log(i);
+        // }
+        // alert(i);
+        // alert(nome);
+        // //USAR A DECLARACAO LET PARA TER O ATRIBUTO DE VARIAVEL EM BLOCO;
+        let negociacaoController = new NegociacaoController();
+    </script>
+    
+</body>
+</html>
